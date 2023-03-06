@@ -1,4 +1,3 @@
-import {Box,Paper } from "@mui/material";
 import BottomNav from "../../components/bottomFormNav";
 
 const Pg6=(props)=>{
@@ -7,12 +6,11 @@ const Pg6=(props)=>{
       <>
             <div className="page-content">
             <div className="basics-page">
-             <Box sx={{marginBottom:"20px", marginTop:"30px"}} >
-              <Paper elevation={0}>
+              <div className="page4-titles">
               <h1 className="page-content-title"> Share some basics about your place </h1>
               <p className="page-content-desc">You'll add more details later, like bed types.</p>
-              </Paper>
-             </Box>
+              </div>
+
              <div className="basics">
               <ul>
                 <li>

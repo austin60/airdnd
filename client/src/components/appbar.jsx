@@ -1,9 +1,8 @@
-import React ,{useState,useRef,useEffect} from 'react'
+import React ,{useState,useRef,/*useEffect*/} from 'react'
 import {FaAirbnb } from "react-icons/fa";
 import { HiOutlineBars3} from "react-icons/hi2";
 import { CgProfile } from "react-icons/cg";
 import {BiSearch } from "react-icons/bi";
-import Paper from '@mui/material/Paper';
 import { NavLink} from 'react-router-dom';
 import SignInForms from "./signinForm";
 import LogIn from './login';
@@ -56,14 +55,14 @@ const closeLogin=()=>{
 
 }
 //close menu on random click
-useEffect(()=>{
+/*useEffect(()=>{
  document.addEventListener("mousedown",e=>{
   if(!menuRef.current.contains(e.target)){
     const x=document.getElementById("dropdown");
   x.style.display = "none";
   }
  })
-})
+})*/
    
     const handleClick=()=>{
         const x=document.getElementById("dropdown");
@@ -89,7 +88,8 @@ useEffect(()=>{
           handleTextSearch}=props
     return(
         <>
-        <Paper elevation={1}  sx={{width:"100%", height:"5rem" ,margin:"0px"}}>
+        
+        <div className='main-nav'>
         <nav className='nav'>
            <div className="airIcon"><FaAirbnb  className="bar-icon"/><b className="icon-name">airdnd</b></div>
 
@@ -104,9 +104,8 @@ useEffect(()=>{
             </div>  
                
         </nav>
-        </Paper>
+        </div>
          <div className="dropdown" ref={menuRef} id="dropdown">
-        <Paper elevation={2} sx={{paddingRight:"10px", minHeight:"30vh",display:"flex"}} >
          <ul>
              <li onClick={openModal}>Sign up</li>
              <li onClick={openLogin}>Log in</li>
@@ -115,7 +114,6 @@ useEffect(()=>{
              <li>Host an expirience </li>
              <li>Help</li>
          </ul>
-         </Paper>
          </div>
          <SignInForms isOpen={isOpen} dataOpen={dataOpen} openModal={openModal} closeModal={closeModal}
           openDataModal={openDataModal} closeDataModal={closeDataModal} backToOption={backToOption} closeBoth={closeBoth} setInput={setInput}

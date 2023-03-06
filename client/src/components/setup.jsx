@@ -22,7 +22,7 @@ import axios from 'axios';
 
 class SetUp extends Component{
     state={
-        page:14,
+        page:1,
         place_desc:sessionStorage.getItem('place_desc')||'house',
         guest_space_access:sessionStorage.getItem('guest_space_access')||'entire place',
         host_adress:sessionStorage.getItem('host_adress')||'',

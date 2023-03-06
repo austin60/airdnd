@@ -1,4 +1,3 @@
-import { Box,Paper } from "@mui/material";
 import { MdLocationOn} from "react-icons/md";
 import BottomNav from "../../components/bottomFormNav";
 
@@ -7,12 +6,11 @@ const Pg4=(props)=>{
         <>
             <div className="page-content">
             <div className="">
-             <Box sx={{marginBottom:"20px", marginTop:"30px"}} >
-              <Paper elevation={0}>
+             <div className="page4-titles">
               <h1 className="page-content-title"> Where's your place located? </h1>
               <p className="page-content-desc">Your addres is only shared with guests after they have made a reservation </p>
-              </Paper>
-             </Box>
+          
+             </div>
              <div className="map">
              <div className="location">
                <div className="loc-icon">

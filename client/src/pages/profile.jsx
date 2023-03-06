@@ -1,5 +1,4 @@
 import ProfileNav from "../components/profileNav";
-import { Paper } from "@mui/material";
 import Property from "../components/property";
 
 
@@ -8,9 +7,9 @@ const Profile=(props)=>{
     return(
         <div className="profile-page">
           <ProfileNav userprops={userprops} handlePropertySearch={handlePropertySearch}/>
-         <Paper elevation={0}>
+          <div>
            <Property userprops={userprops}/>
-         </Paper>
+           </div>
         </div>
     )
 }

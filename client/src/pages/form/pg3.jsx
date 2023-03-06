@@ -1,14 +1,9 @@
 import { BsDoorClosed, BsHouseDoor } from "react-icons/bs";
 import { GrGroup } from "react-icons/gr";
 import BottomNav from "../../components/bottomFormNav";
-import { createTheme, responsiveFontSizes, ThemeProvider } from '@mui/material/styles';
-
-let theme = createTheme();
-theme = responsiveFontSizes(theme);
 
 const Pg3=(props)=>{
     return(
-      <ThemeProvider theme={theme}>
             <div className="page-content">
               <div className="place-desc">
                 <div className="pg-q">
@@ -72,7 +67,6 @@ const Pg3=(props)=>{
                 <BottomNav prevPage={props.prevPage} nextPage={props.nextPage} />
               </div>
             </div>
-        </ThemeProvider>
     )
 }
 export default Pg3;

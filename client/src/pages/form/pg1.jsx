@@ -1,12 +1,10 @@
-import { Box,Paper } from "@mui/material";
 import InitNav from "../../components/initBottomNav";
 const Pg1=(props)=>{
     return(
         <>
             <div className="page-content">
             <div className="text">
-             <Box >
-              <Paper elevation={0}>
+            <div>
               <h3>
                Step 1
               </h3>
@@ -17,8 +15,7 @@ const Pg1=(props)=>{
                   In this step we'll ask you which type of property do you have and if guests will book the entire place 
                   or just one room. Then let u know your location and how many guets can stay.
               </p>
-              </Paper>
-             </Box>
+             </div>
             </div>
             <div className="pg1-img">
                <img src="https://www.hpdconsult.com/wp-content/uploads/2019/05/best-modern-house-design-Floor-Plans-5.jpg" alt="home" />

@@ -1,4 +1,3 @@
-import { Box,Paper } from "@mui/material";
 import BottomNav from "../../components/bottomFormNav";
 
 const Pg5=(props)=>{
@@ -7,14 +6,12 @@ const Pg5=(props)=>{
         <>
             <div className="page-content">
             <div className="">
-             <Box sx={{marginBottom:"20px", marginTop:"30px"}} >
-              <Paper elevation={0}>
+             <div className="page4-titles">
               <h1 className="page-content-title"> Where's your place located? </h1>
               <p className="page-content-desc">
                   Your addres is only shared with guests after they have made a reservation
               </p>
-              </Paper>
-             </Box>
+              </div>
              <div className="form">
                 <input type="text" placeholder="street" name='street' value={street}  onChange={setInput('street')}/>
                 <input type="text" placeholder="Apt, suite, etc.(Optional)" name="apt" value={apt} onChange={setInput('apt')} />
