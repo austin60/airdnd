@@ -24,7 +24,7 @@ app.use('/airdnd',signInUrls);
 app.use('/airdnd',aggregateUrl);
 
 //serving the frontend
-/*app.use(express.static(path.join(__dirname, "./client/build")));
+app.use(express.static(path.join(__dirname, "./client/build")));
 
 app.get("*", function(_,res){
     res.sendFile(
@@ -33,7 +33,7 @@ app.get("*", function(_,res){
             res.status(500).send(err)
         }
     )
-})*/
+})
 if (process.env.NODE_ENV === 'production') {
     //*Set static folder
     app.use(express.static('client/build'));
