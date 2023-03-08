@@ -52,7 +52,7 @@ class App extends Component{
     //account is online.
 
   componentDidMount(){
-    axios.get('/airdnd')
+    axios.get('https://airdnd-serv.onrender.com/airdnd')
          .then(res=>{
            this.setState({data:res.data},
            //()=>console.log(this.state.data)
