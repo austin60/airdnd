@@ -8,6 +8,7 @@ const airdndUrls=require('./routes/routes');
 const reservUrls=require('./routes/reservRoutes');
 const signInUrls=require('./routes/signInRoutes');
 const aggregateUrl=require('./routes/aggregateRoute');
+const path=require("path")
 
 //connect to db
 mongoose.connect(process.env.DB_URL,console.log('Database connected'));
@@ -33,6 +34,12 @@ app.get("*", function(_,res){
         }
     )
 })*/
+if (process.env.NODE_ENV === 'production') {
+    //*Set static folder
+    app.use(express.static('client/build'));
+    
+    app.get('*', (req,res) => res.sendFile(path.resolve(__dirname, 'client', 'build','index.html')));
+  }
 
 //listen at server
 const port=process.env.PORT||5000;
