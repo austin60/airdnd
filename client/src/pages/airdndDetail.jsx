@@ -49,18 +49,17 @@ const AirdndDetail=(props)=>{
   }
 
   //close calendar if click outside
-   const randomClick=()=>{
+  // const randomClick=()=>{
     /* document.addEventListener('mousedown',(e)=>{
         if(!calenderRef.current.contains(e.target)){
           setFdate(false)
         }
      })*/
-     console.log("cow")
-   }
+   //}
  
     useEffect(() => {
      //close calendar if click outside
-     randomClick();
+     //randomClick();
 
      //get individual airdnd data
      getData();
