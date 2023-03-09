@@ -5,7 +5,7 @@ const Card=(props)=>{
     return(
       <>
       {
-        props.data<1?<div>Loading...</div>:data.map(data=>(<div key={data._id} className="image-card">
+        data<1?<div>Loading...</div>:data.map(data=>(<div key={data._id} className="image-card">
           <Link to={`/${data._id}`}>
          <img src={data.files} alt="house" />
          </Link>
