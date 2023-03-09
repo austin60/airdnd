@@ -51,7 +51,7 @@ class App extends Component{
     //account is online.
 
   componentDidMount(){
-    axios.get('https://airdnd-serv.onrender.com/airdnd')
+    axios.get('/airdnd')
          .then(res=>{
            this.setState({data:res.data},
            //()=>console.log(this.state.data)
@@ -130,7 +130,7 @@ submitSignIn=()=>{
   //
   //
   //
-  axios.post('https://airdnd-serv.onrender.com/airdnd/signup',signUpData)
+  axios.post('/airdnd/signup',signUpData)
   //.then(res=>console.log(res.data))
   .catch(err=>console.log(err))
 }
