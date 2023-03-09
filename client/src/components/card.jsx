@@ -1,11 +1,11 @@
 import { Link } from "react-router-dom";
 
 const Card=(props)=>{
- 
+        const{data}=props
     return(
       <>
       {
-        props.data<1?<div>Loading...</div>:props.data.map(data=>(<div key={data._id} className="image-card">
+        props.data<1?<div>Loading...</div>:data.map(data=>(<div key={data._id} className="image-card">
           <Link to={`/${data._id}`}>
          <img src={data.files} alt="house" />
          </Link>
