@@ -5,6 +5,7 @@ import Calendar from 'react-calendar';
 import { useParams } from 'react-router-dom';
 import 'react-calendar/dist/Calendar.css';
 import axios from 'axios';
+import { DDB_URL } from '../url';
 
 const AirdndDetail=(props)=>{
     const {incItems,decItems,adults,children,infants,pets,makeReservation}=props;
@@ -40,7 +41,7 @@ const AirdndDetail=(props)=>{
 
    //get individual airdnd data
     const getData=()=>{
-      axios.get(`airdnd/${airdndId}`)
+      axios.get(`${ DDB_URL }/airdnd/${airdndId}`)
       .then(res=>{
         setIdata(res.data);
        // console.log(idata);

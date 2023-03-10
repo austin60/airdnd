@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+//import { DDB_URL } from "../url";
 
 const Card=(props)=>{
         const{data}=props

@@ -17,6 +17,7 @@ import Pg13 from "../pages/form/pg13";
 import Pg14 from "../pages/form/pg14";
 import FormNav from "./formNav";
 import axios from 'axios';
+import { DDB_URL } from '../url';
 
 
 
@@ -200,7 +201,7 @@ class SetUp extends Component{
             userId:userId
         }
         console.log(info);
-       axios.post('/airdnd/post',info)
+       axios.post(`${ DDB_URL }/airdnd/post`,info)
        .then(res=>{console.log(res.data);this.notify()})
        .catch(err=>{console.log(err)})
           

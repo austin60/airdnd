@@ -6,6 +6,7 @@ import Profile from './pages/profile';
 import axios from 'axios';
 import './App.css';
 import { BrowserRouter as Router,Routes,  Route} from "react-router-dom";
+import { DDB_URL } from './url';
 
 
 
@@ -51,10 +52,10 @@ class App extends Component{
     //account is online.
 
   componentDidMount(){
-    axios.get('/airdnd')
+    axios.get(`${ DDB_URL }/airdnd`)
          .then(res=>{
            this.setState({data:res.data},
-           //()=>console.log(this.state.data)
+          // ()=>console.log(`${ DDB_URL }/airdnd`)
            )})
          .catch(err=>{console.log(err)});
         
@@ -78,7 +79,7 @@ class App extends Component{
 
          //retrieve user property
       const userId=this.state.userId;
-     axios.get(`/airdnd/profile/${userId}`)
+     axios.get(`${ DDB_URL }/airdnd/profile/${userId}`)
      .then(res=>{
       this.setState({userprops:res.data})
            })
@@ -105,7 +106,7 @@ class App extends Component{
       nights:nights,
       cost:cost
     }
-   axios.post('/airdnds/reservation',reservInfo)
+   axios.post(`${ DDB_URL }/airdnds/reservation`,reservInfo)
     //.then(res=>console.log(res.data,"sent"))
     .catch(err=>console.log(err))
    // console.log(reservInfo);
@@ -127,10 +128,7 @@ submitSignIn=()=>{
       email:semail
   }
   //console.log(signUpData)
-  //
-  //
-  //
-  axios.post('/airdnd/signup',signUpData)
+  axios.post(`${ DDB_URL }/airdnd/signup`,signUpData)
   //.then(res=>console.log(res.data))
   .catch(err=>console.log(err))
 }
@@ -158,7 +156,7 @@ accountLogin=()=>{
   const phone={
     phone:this.state.lphoneNo
   }
-  axios.post('/airdnd/login/user',phone)
+  axios.post(`${ DDB_URL }/airdnd/login/user`,phone)
   .then(res=>{
     this.setState({ user:res.data},
      ()=>{
