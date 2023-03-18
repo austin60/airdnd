@@ -8,13 +8,13 @@ const Card=(props)=>{
       {
         data<1?<div>Loading...</div>:data.map(data=>(<div key={data._id} className="image-card">
           <Link to={`/${data._id}`}>
-         <img src={data.files} alt="house" />
+         <img src={data.file1} alt="house" />
          </Link>
          <div className="card-info">
           <div>
           <p><b>{data.host_adress},{data.country}</b></p>
           </div>
-          <p>${data.price} night</p>
+          <span>${data.price} night</span>
          </div>
       </div>))}
       

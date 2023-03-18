@@ -790,7 +790,14 @@ img{
   border:1px solid #8a8474;
   border-radius: 7px;
   margin-bottom: 10px;
-
+  display:flex;
+  flex-wrap: wrap;
+  gap:1rem;
+  justify-content: center;
+}
+.image-display img{
+  width: 30%;
+  height: 46%;
 }
 .intro-title{
   font-size: 40px;
@@ -1622,4 +1629,28 @@ background: red;*/
   height: 2.5rem;
   border:1px solid black;
   background: rgb(252, 251, 247);
+}
+.upload-btn{
+  background: var(--pink);
+}
+@media only screen and (max-width: 390px){
+  
+    .image-card{
+      width: 9rem;
+      height: 10rem;
+      font-size: 14px;
+      
+  }
+  .display-content{
+    gap:2rem;
+    padding: 0rem;
+  }
+  .main-nav{
+    display: flex;
+    height:4rem;
+    align-items: center;
+  }
+  .user{
+    width: 15%;
+  }
 }

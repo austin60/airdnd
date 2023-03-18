@@ -40,12 +40,16 @@ class SetUp extends Component{
         anyofthese:sessionStorage.getItem('anyofthese')||[],
         canc_policy:sessionStorage.getItem('canc_policy')||'',
         files:{creator:'',title:'',message:'',tags:'',selectedFile:''},
-        file:sessionStorage.getItem('file')||[],
         street:sessionStorage.getItem('street')||'',
         state:sessionStorage.getItem('state')||'',
         city:sessionStorage.getItem('city')||'',
         zip_code:sessionStorage.getItem('zip_code')||'',
-        country:sessionStorage.getItem("country")||''
+        country:sessionStorage.getItem("country")||'',
+        file1:sessionStorage.getItem("file1")||'',
+        file2:sessionStorage.getItem("file2")||'',
+        file3:sessionStorage.getItem("file3")||'',
+        file4:sessionStorage.getItem("file4")||'',
+        file5:sessionStorage.getItem("file5")||'',
         
     }
     //next form page
@@ -150,10 +154,10 @@ class SetUp extends Component{
         }
       
     //upload file
-      getFiles=({base64})=>{
+      getFiles=input=>({base64})=>{
         this.setState({files:{...this.state.files,selectedFile:base64},
        },
-       ()=> sessionStorage.setItem('file',this.state.files.selectedFile))
+       ()=> sessionStorage.setItem(input,this.state.files.selectedFile))
        
       }
      
@@ -163,8 +167,8 @@ class SetUp extends Component{
     //upload data to mongodb
     finish=()=>{
         const{place_desc,guest_space_access,host_adress,has_to_offer,apartment_title,apartment_desc,
-            guest_type,price,host_type,guests,bathrooms,beds,bedrooms,canc_policy,anyofthese,file,street,
-            apt,state,city, zip_code,country}=this.state;
+            guest_type,price,host_type,guests,bathrooms,beds,bedrooms,canc_policy,anyofthese,street,
+            apt,state,city, zip_code,country,file1, file2,file3,file4, file5}=this.state;
             const{userId}=this.props
           /*  if(place_desc||guest_space_access||host_adress||has_to_offer||apartment_title||apartment_desc||
                 guest_type||price||host_type||guests||bathrooms||beds||bedrooms||file||street||
@@ -191,7 +195,11 @@ class SetUp extends Component{
             host_type: host_type,
             anyofthese: anyofthese,
             cancellation_policy: canc_policy,
-            files:file,
+            file1:file1,
+            file2:file2,
+            file3:file3,
+            file4:file4,
+            file5:file5,
             street:street,
             state: state,
             city: city,
@@ -207,10 +215,11 @@ class SetUp extends Component{
           
      
     }
+   
     renderSwitch=(page)=>{
         const{place_desc,guest_space_access,host_adress,has_to_offer,apartment_title,apartment_desc,
             guest_type,price,host_type,guests,bathrooms,beds,bedrooms,canc_policy,street,
-            apt,state,city, zip_code,country}=this.state;
+            apt,state,city, zip_code,country,file1, file2,file3,file4, file5}=this.state;
            //const {decItems,incItems}=this.props
         switch(page){
             case 1:return <Pg1 nextPage={this.nextPage}/> ;
@@ -228,7 +237,8 @@ class SetUp extends Component{
             case 11:return <Pg11 price={price} nextPage={this.nextPage} prevPage={this.prevPage} incItems={this.incItems}  decItems={this.decItems}/>;
             case 12:return <Pg12 host_type={host_type} setInput={this.setInput} anyofthese={this.anyofthese} setAnyof={this.setAnyof} nextPage={this.nextPage} prevPage={this.prevPage}/> ;
             case 13:return <Pg13 canc_policy={canc_policy} setInput={this.setInput} prevPage={this.prevPage} nextPage={this.nextPage}/> ;
-            case 14:return <Pg14 getFiles={this.getFiles} prevPage={this.prevPage} nextPage={this.nextPage}  finish={this.finish}/>;
+            case 14:return <Pg14 getFiles={this.getFiles} prevPage={this.prevPage} nextPage={this.nextPage}  finish={this.finish}
+            file1={file1 } file2={file2} file3={file3} file4={file4} file5={file5}/>;
             default:return <Pg12 />
        }
     }

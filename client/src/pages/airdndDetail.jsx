@@ -71,13 +71,13 @@ const AirdndDetail=(props)=>{
          
             <div className="images-detail">
               <div className='img1'>
-              <img src={idata.files}  alt="" />
+              <img src={idata.file1}  alt="" />
               </div>
               <div className='imggrp'>
-                 <img src="" alt="" />
-                 <img src="" alt="" className='top-right-img'/>
-                 <img src=""  alt="" />
-                 <img src=""alt="" className='bottom-right-img'/>
+                 <img src={idata.file2}  alt="" />
+                 <img src={idata.file3}  alt="" className='top-right-img'/>
+                 <img src={idata.file4}   alt="" />
+                 <img src={idata.file5} alt="" className='bottom-right-img'/>
               </div>
             </div>
             <div className="typo-detail">

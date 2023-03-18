@@ -74,12 +74,13 @@ const closeLogin=()=>{
         }
  const checkLogged=()=>{
   const {userId}=props
-  if(userId===''){
+  if(userId===false){
     console.log("log in")
     openLogin();
   }
   else{
     console.log('logged') 
+    console.log(userId)
   }
  }
   
@@ -99,7 +100,7 @@ const closeLogin=()=>{
             </div>
             <div className="user">
                 <div><HiOutlineBars3 size={20} onClick={handleClick} className="app-icon"/></div>
-                <div><NavLink to={`/profile/${userId}`} style={{color:"black",textDecoration:"none"}}><CgProfile  className="app-icon"/></NavLink>  </div>
+                <div onClick={checkLogged}><NavLink to={`/profile/${userId}`} style={{color:"black",textDecoration:"none"}}><CgProfile  className="app-icon"/></NavLink>  </div>
                  {userId &&(<span id='online'></span>)}
             </div>  
                
