@@ -68,7 +68,7 @@ const AirdndDetail=(props)=>{
     return(
       <>
        {idata.length===0?"details loading...":( <div className="display-page" >
-         
+          <h2 className="page-content-title">{idata.apartment_title}</h2>
             <div className="images-detail">
               <div className='img1'>
               <img src={idata.file1}  alt="" />

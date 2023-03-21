@@ -210,7 +210,7 @@ class SetUp extends Component{
         }
         console.log(info);
        axios.post(`${ DDB_URL }/airdnd/post`,info)
-       .then(res=>{console.log(res.data);this.notify()})
+       .then(res=>{console.log(res.data);this.notify();sessionStorage.clear();})
        .catch(err=>{console.log(err)})
           
      

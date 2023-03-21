@@ -6,6 +6,7 @@ import Profile from './pages/profile';
 import axios from 'axios';
 import './App.css';
 import { BrowserRouter as Router,Routes,  Route} from "react-router-dom";
+import "react-bootstrap/dist/react-bootstrap"
 import { DDB_URL } from './url';
 
 
@@ -73,7 +74,6 @@ class App extends Component{
           const userIdVal=userIdArr[1];
           //call  setUserId function
           setUserId(userIdVal);
-    
         }
         accountOnline();
 

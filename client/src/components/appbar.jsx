@@ -2,7 +2,7 @@ import React ,{useState,useRef,/*useEffect*/} from 'react'
 import {FaAirbnb } from "react-icons/fa";
 import { HiOutlineBars3} from "react-icons/hi2";
 import { CgProfile } from "react-icons/cg";
-import {BiSearch } from "react-icons/bi";
+import {BiSearch,BiGlobe } from "react-icons/bi";
 import { NavLink} from 'react-router-dom';
 import SignInForms from "./signinForm";
 import LogIn from './login';
@@ -98,14 +98,22 @@ const closeLogin=()=>{
                 <input type="text" placeholder="search location" onChange={handleTextSearch}/>
                  <div className="search-icon"><BiSearch/></div> 
             </div>
+
+            <div className='left-bar'>
+             <div className='appbar-title'>
+                <span ><NavLink to={userId?"/setup":loginOpen}style={{color:"black",textDecoration:"none",fontWeight:"500"}}>airdnd your home</NavLink></span>
+                <span className='globe'><BiGlobe/></span>
+            </div>
             <div className="user">
                 <div><HiOutlineBars3 size={20} onClick={handleClick} className="app-icon"/></div>
                 <div onClick={checkLogged}><NavLink to={`/profile/${userId}`} style={{color:"black",textDecoration:"none"}}><CgProfile  className="app-icon"/></NavLink>  </div>
                  {userId &&(<span id='online'></span>)}
             </div>  
+         </div>
                
         </nav>
         </div>
+        
          <div className="dropdown" ref={menuRef} id="dropdown">
          <ul>
              <li onClick={openModal}>Sign up</li>
